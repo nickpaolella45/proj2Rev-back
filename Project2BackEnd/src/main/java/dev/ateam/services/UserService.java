@@ -2,22 +2,22 @@ package dev.ateam.services;
 
 import java.util.Set;
 
-import dev.ateam.entities.Users;
+import dev.ateam.entities.AppUser;
 
 public interface UserService {
 
 	
 	
-	Users createUser(Users user);
+	AppUser createUser(AppUser user);
 	
-	Users getUserById(int id);
-	Users getUserByName(String name);
-	Set<Users> allUsers();
+	AppUser getUserById(int id);
+	AppUser getUserByName(String name);
+	Set<AppUser> allUsers();
 	
-	Users updateUser(Users user);
+	AppUser updateUser(AppUser user);
 	
-	boolean deleteUser(Users user);
+	boolean deleteUser(AppUser user);
 	
-	Users loginUser(Users user);
+	AppUser loginUser(AppUser user);
 	
 }

@@ -5,11 +5,11 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import dev.ateam.entities.Users;
+import dev.ateam.entities.AppUser;
 
 @Repository
-public interface UserRepository extends CrudRepository<Users,Integer> {
+public interface UserRepository extends CrudRepository<AppUser,Integer> {
 
-	List<Users> findByName(String name);
+	//List<AppUser> findByName(String name);
 	
 }

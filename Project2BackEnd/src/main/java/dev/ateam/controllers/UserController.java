@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import dev.ateam.entities.Users;
+import dev.ateam.entities.AppUser;
 import dev.ateam.services.UserService;
 
 @RestController
@@ -25,25 +25,25 @@ public class UserController {
 	
 	// create
 	@RequestMapping(value = "/users", method = RequestMethod.POST)
-	public Users createUser(@RequestBody Users user) {		
+	public AppUser createUser(@RequestBody AppUser user) {		
 		return as.createUser(user);
 	}
 	
 	//read
 	@RequestMapping(value = "/users", method = RequestMethod.GET)
-	public Set<Users> allUsers(){
+	public Set<AppUser> allUsers(){
 		return as.allUsers();
 	}
 	
 	@RequestMapping(value = "/users/{id}", method = RequestMethod.GET)
-	public Users getUser(@PathVariable int id) {
+	public AppUser getUser(@PathVariable int id) {
 		return as.getUserById(id);
 	}
 	
 	//update use the put method for updating a resource
 	// put should update a resource if it exists else it will create a new associate
 	@RequestMapping(value = "/users", method =RequestMethod.PUT)
-	public Users updateUser(@RequestBody Users user) {
+	public AppUser updateUser(@RequestBody AppUser user) {
 		return as.updateUser(user);
 	}
 	
