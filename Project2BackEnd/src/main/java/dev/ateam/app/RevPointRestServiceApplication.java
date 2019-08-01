@@ -1,4 +1,4 @@
-package com.example.demo;
+package dev.ateam.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,13 +7,13 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@ComponentScan("dev.paolella")
-@EntityScan("dev.paolella.entities")
-@EnableJpaRepositories("dev.paolella.repositories")
-public class Project2BackEndApplication {
+@EntityScan("dev.ateam.entities")
+@ComponentScan("dev.ateam")
+@EnableJpaRepositories("dev.ateam.repositories")
+public class RevPointRestServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Project2BackEndApplication.class, args);
+		SpringApplication.run(RevPointRestServiceApplication.class, args);
 	}
 
 }
