@@ -52,5 +52,10 @@ public class UserController {
 	public boolean removeUser(@PathVariable int id) {
 		return as.deleteUser(as.getUserById(id));
 	}
+	
+	   @RequestMapping(value = "/login", method = RequestMethod.POST)
+	    public AppUser login(@RequestBody AppUser user) {      
+	        return as.loginUser(user);
+	    }
 
 }
