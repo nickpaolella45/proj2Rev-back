@@ -10,6 +10,6 @@ import dev.ateam.entities.AppUser;
 @Repository
 public interface UserRepository extends CrudRepository<AppUser,Integer> {
 
-	//List<AppUser> findByName(String name);
+	List<AppUser> findByUsername(String name);
 	
 }
