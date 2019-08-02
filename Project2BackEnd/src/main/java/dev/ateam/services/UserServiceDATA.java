@@ -70,4 +70,11 @@ public class UserServiceDATA implements UserService{
 		return null;
 	}
 
+  @Override
+  public List<AppUser> findByUsername(String name) {
+    return  ar.findByUsername(name);
+  }
+	
+	
+
 }
