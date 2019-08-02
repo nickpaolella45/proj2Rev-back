@@ -60,10 +60,13 @@ public class UserServiceDATA implements UserService{
 	@Override
 	public AppUser loginUser(AppUser user) {
 		List<AppUser> theUsers= ar.findByUsername(user.getUsername());
-		
-		if(theUsers.get(0).getPassword() == user.getPassword()) {
-			return theUsers.get(0);
+		for(AppUser curUserEvaluated: theUsers) {
+			if(curUserEvaluated.getPassword().equals(user.getPassword())){ 
+				return curUserEvaluated;
+			}
 		}
+
+
 		return null;
 	}
 
