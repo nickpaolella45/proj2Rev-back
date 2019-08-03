@@ -12,7 +12,7 @@ public interface UserService {
 	AppUser createUser(AppUser user);
 	
 	AppUser getUserById(int id);
-	AppUser getUserByName(String name);
+	
 	Set<AppUser> allUsers();
 	
 	AppUser updateUser(AppUser user);

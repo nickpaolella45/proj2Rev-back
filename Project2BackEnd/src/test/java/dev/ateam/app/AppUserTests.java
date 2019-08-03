@@ -1,8 +1,8 @@
 package dev.ateam.app;
 
-
-
 import java.util.List;
+
+import javax.transaction.Transactional;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,7 +17,7 @@ import dev.ateam.services.UserService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-
+@Transactional
 public class AppUserTests {
   @Autowired
   @Qualifier("UserServiceDATA")

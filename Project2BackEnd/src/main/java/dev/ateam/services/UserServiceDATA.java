@@ -31,11 +31,6 @@ public class UserServiceDATA implements UserService{
 		return user;
 	}
 
-	@Override
-	public AppUser getUserByName(String name) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public Set<AppUser> allUsers() {
@@ -74,6 +69,7 @@ public class UserServiceDATA implements UserService{
   public List<AppUser> findByUsername(String name) {
     return  ar.findByUsername(name);
   }
+
 	
 	
 
