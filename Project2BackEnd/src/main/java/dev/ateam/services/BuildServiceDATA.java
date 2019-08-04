@@ -7,11 +7,15 @@ import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import dev.ateam.entities.AppUser;
 import dev.ateam.entities.Build;
 import dev.ateam.repositories.BuildRepository;
 
+@Component
+@Service("BuildServiceDATA")
 public class BuildServiceDATA implements BuildService {
 
 	@Autowired
@@ -26,13 +30,13 @@ public class BuildServiceDATA implements BuildService {
 	@Override
 	public boolean deleteBuild(Build build) {
 		br.delete(build);
-		return false;
+		return true;
 	}
 
 	@Override
 	public Build updateBuild(Build build) {
 		br.save(build);
-		return null;
+		return build;
 	}
 
 	//Ask Adam what this is all about
