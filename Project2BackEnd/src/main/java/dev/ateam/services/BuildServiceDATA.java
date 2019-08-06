@@ -7,11 +7,15 @@ import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import dev.ateam.entities.AppUser;
 import dev.ateam.entities.Build;
 import dev.ateam.repositories.BuildRepository;
 
+@Component
+@Service("BuildServiceDATA")
 public class BuildServiceDATA implements BuildService {
 
 	@Autowired
