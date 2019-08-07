@@ -26,7 +26,7 @@ public class AppUserTests {
   @Test
   public void saveAppUser() {
       
-      AppUser user = new AppUser(0,"bob","bob","crashTestDummy");
+      AppUser user = new AppUser(0,"bob" + Math.random(),"bob","crashTestDummy");
       us.createUser(user);
       
   }
@@ -39,5 +39,10 @@ public class AppUserTests {
       
   }
 
+  
+  
+  
+  
 
 }
+
