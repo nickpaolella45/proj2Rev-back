@@ -22,7 +22,7 @@ public class UserServiceDATA implements UserService{
 	@Override
 	public AppUser createUser(AppUser user) {
 		ar.save(user);
-		return user;
+		return loginUser(user);
 	}
 
 	@Override
