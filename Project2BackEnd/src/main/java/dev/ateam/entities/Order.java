@@ -1,14 +1,40 @@
 package dev.ateam.entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "computer_order")
 public class Order {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name ="order_id")
 	private int orderId;
+	
+	@Column(name="quartermaster_id")
 	private int qmId;
+	
+	@Column(name="requester_id")
 	private int	rId;
+	
+	@Column(name="assembler_id")
 	private int aId;
+	
+	@Column(name="build_id")
 	private int buildId;
+	
+	@Column(name="requester_id")
 	private String status;
+	
+	@Column(name="request_details")
 	private String requestDetails;
+	
+	
 	public Order(int orderId, int qmId, int rId, int aId, int buildId, String status, String requestDetails) {
 		super();
 		this.orderId = orderId;
