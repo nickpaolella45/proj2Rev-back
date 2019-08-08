@@ -16,7 +16,7 @@ public class Build {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="b_id)
+	@Column(name="b_id")
 	private int b_Id;
 	
 	@Column(name="part_list")
