@@ -24,6 +24,10 @@ public class BuildServiceDATA implements BuildService {
 	@Override
 	public Build createBuild(Build build) {
 		br.save(build);
+		String partList=build.getPartList();
+		br.findBypartList(partList);
+		int id=br.findBypartList(partList).get(0).getId();
+		build.setB_Id(id);
 		return build;
 	}
 

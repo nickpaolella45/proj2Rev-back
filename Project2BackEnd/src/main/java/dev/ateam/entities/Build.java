@@ -11,11 +11,12 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="project2")
+@Table(name="build")
 public class Build {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="b_id")
 	private int b_Id;
 	
 	@Column(name="part_list")
@@ -48,18 +49,13 @@ public class Build {
 		this.b_Id = b_Id;
 	}
 
-//	public String getPartList() {
-//		partList = "";
-//		for(Parts curPart:partsList) {
-//			partList += curPart.getName()+", ";
-//		}
-//		partList = partList.substring(0,partList.length()-2);
-//		return partList;
-//	}
+	public String getPartList() {
+		return partList;
+	}
 //
-//	public void setPartList(String partList) {
-//		this.partList = partList;
-//	}
+	public void setPartList(String partList) {
+		this.partList = partList;
+	}
 //
 //	public List<Parts> getPartsList() {
 //		return partsList;

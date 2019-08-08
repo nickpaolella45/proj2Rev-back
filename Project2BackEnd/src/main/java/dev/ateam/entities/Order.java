@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "computer_order")
@@ -29,9 +30,11 @@ public class Order {
 	private int buildId;
 	
 	@Column(name="requester_id")
+	@NotNull(message = "Status can't be null")
 	private String status;
 	
 	@Column(name="request_details")
+	@NotNull(message = "Request details can't be null")
 	private String requestDetails;
 	
 	
