@@ -12,9 +12,9 @@ public class Order {
 	public Order(int orderId, int qmId, int rId, int aId, int buildId, String status, String requestDetails) {
 		super();
 		this.orderId = orderId;
-		this.qmId = qmId;
-		this.rId = rId;
-		this.aId = aId;
+		this.qmId = qmId; //Quartermaster ID
+		this.rId = rId; //Requester ID
+		this.aId = aId; // Assembler ID
 		this.buildId = buildId;
 		this.status = status;
 		this.requestDetails = requestDetails;

@@ -24,7 +24,7 @@ import dev.ateam.services.UserService;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @SpringBootTest
 @ContextConfiguration(classes = dev.ateam.app.RevPointRestServiceApplication.class)
-class AssociateTesting {
+class UserTesting {
 
 	@Autowired
 	@Qualifier("UserServiceDATA")
