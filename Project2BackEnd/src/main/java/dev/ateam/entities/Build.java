@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="project2")
+@Table(name="build")
 public class Build {
 
 	@Id
