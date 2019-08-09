@@ -30,6 +30,9 @@ public class Build {
 //		this.partList = partList;
 //		this.partsList = partsList;
 //	}
+	
+	
+	
 
 	public Build(int b_Id, String partList) {
 		super();
