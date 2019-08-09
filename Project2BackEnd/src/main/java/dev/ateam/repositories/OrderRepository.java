@@ -11,5 +11,5 @@ import dev.ateam.entities.Order;
 public interface OrderRepository extends CrudRepository<Order,Integer>{
 
 	List<Order> findByStatusAndRequestDetails(String status, String requestdetails);
-	
+	//List<Order> findByOrderid(int orderId);
 }

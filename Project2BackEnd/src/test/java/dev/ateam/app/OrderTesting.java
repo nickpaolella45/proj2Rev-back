@@ -26,18 +26,21 @@ import dev.ateam.services.OrderService;
 @ContextConfiguration(classes = dev.ateam.app.RevPointRestServiceApplication.class)
 class OrderTesting {
 
-//	@Autowired
-//	@Qualifier("OrderServiceDATA")
-//	OrderService os;
-//	
-//	dev.ateam.entities.Order testOrder = new dev.ateam.entities.Order(0,0,0,0,new Build(0,"duck"),"","");
-//
-//	@Test
-//	@Order(1)
-//	//@Commit
-//	void createOrder() {
-//		testOrder = os.createOrder(testOrder);
-//	}
+	@Autowired
+	@Qualifier("OrderServiceDATA")
+	OrderService os;
+	
+	
+
+	@Test
+	@Order(1)
+	@Rollback
+	//@Commit
+	void createOrder() {
+	  //Order(int orderId, int qmId, int rId, int aId, Build build, String status, String requestDetails)
+	    dev.ateam.entities.Order testOrder = new dev.ateam.entities.Order(0,0,0,0,new Build(0,"duck"),"100% duck.","it is a duck.");
+		testOrder = os.createOrder(testOrder);
+	}
 //	
 //	@Test
 //	@Order(2)

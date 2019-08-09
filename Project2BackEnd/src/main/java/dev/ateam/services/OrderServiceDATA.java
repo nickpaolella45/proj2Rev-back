@@ -20,7 +20,8 @@ public class OrderServiceDATA implements OrderService{
 	
 	@Override
 	public Order createOrder(Order order) {
-		or.save(order);
+	    
+		order = or.save(order);
 		//TODO:FIX FRIDAY
 //		String partList = order.getPartList();
 //		br.findBypartList(partList);
