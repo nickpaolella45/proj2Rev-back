@@ -29,10 +29,13 @@ public class Order {
 	@Column(name="assembler_id")
 	private int aId; //Assembler ID
 	
-	@ManyToOne(cascade=CascadeType.ALL, fetch = FetchType.EAGER)	
-	@JoinColumn(name ="build_id")
-	//@JoinColumn(name ="build.b_id")
-	private Build build;
+//	@ManyToOne(cascade=CascadeType.ALL, fetch = FetchType.EAGER)	
+//	@JoinColumn(name ="build_id")
+//	//@JoinColumn(name ="build.b_id")
+//	private Build build;
+	
+	@Column(name="build")
+	private String build;
 	
 	@Column(name="status")
 	private String status;
@@ -40,7 +43,7 @@ public class Order {
 	@Column(name="request_details")
 	private String requestDetails;
 	
-	public Order(int orderId, int qmId, int rId, int aId, Build build, String status, String requestDetails) {
+	public Order(int orderId, int qmId, int rId, int aId, String build, String status, String requestDetails) {
 		super();
 		this.orderId = orderId;
 		this.qmId = qmId;
@@ -77,10 +80,10 @@ public class Order {
 	public void setaId(int aId) {
 		this.aId = aId;
 	}
-	public Build getBuild() {
+	public String getBuild() {
 		return build;
 	}
-	public void setBuild(Build build) {
+	public void setBuild(String build) {
 		this.build = build;
 	}
 	public String getStatus() {

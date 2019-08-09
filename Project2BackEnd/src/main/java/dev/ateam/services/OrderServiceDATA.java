@@ -24,11 +24,6 @@ public class OrderServiceDATA implements OrderService{
 	public Order createOrder(Order order) {
 	    
 		order = or.save(order);
-		//TODO:FIX FRIDAY
-//		String partList = order.getPartList();
-//		br.findBypartList(partList);
-//		int id=br.findBypartList(partList).get(0).getB_Id();
-//		build.setB_Id(id);
 		return order;
 	}
 

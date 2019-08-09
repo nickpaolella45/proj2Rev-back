@@ -35,7 +35,7 @@ class UserTesting {
 	@Commit
 	@Order(1)
 	void createUser() {
-		AppUser user = new AppUser(-1,"TestUser","Pass","crash test dummy");
+		AppUser user = new AppUser(0,"TestUser","Pass","crash test dummy");
 		user = us.createUser(user);
 	}
 
