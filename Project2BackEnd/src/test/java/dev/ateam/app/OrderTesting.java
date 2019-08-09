@@ -14,8 +14,6 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.transaction.annotation.Transactional;
-import dev.ateam.entities.Build;
-import dev.ateam.services.BuildService;
 import dev.ateam.services.OrderService;
 
 
@@ -38,7 +36,7 @@ class OrderTesting {
 	//@Commit
 	void createOrder() {
 	  //Order(int orderId, int qmId, int rId, int aId, Build build, String status, String requestDetails)
-	    dev.ateam.entities.Order testOrder = new dev.ateam.entities.Order(0,0,0,0,new Build(0,"duck"),"100% duck.","it is a duck.");
+	    dev.ateam.entities.Order testOrder = new dev.ateam.entities.Order(0,0,0,0,"duck","100% duck.","it is a duck.");
 		testOrder = os.createOrder(testOrder);
 	}
 //	

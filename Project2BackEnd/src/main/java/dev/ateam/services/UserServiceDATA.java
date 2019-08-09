@@ -21,14 +21,21 @@ public class UserServiceDATA implements UserService{
 
 	@Override
 	public AppUser createUser(AppUser user) {
-		ar.save(user);
-		return loginUser(user);
+		if( getUserById(user.getId())== null)
+		{
+			user.setId(0);
+		}
+		return ar.save(user);
 	}
 
 	@Override
 	public AppUser getUserById(int id) {
+		try {
 		AppUser user = ar.findById(id).get();
 		return user;
+		} catch(Exception e) {
+			return null;
+		}
 	}
 
 
