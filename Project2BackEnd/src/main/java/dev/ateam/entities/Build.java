@@ -49,18 +49,13 @@ public class Build {
 		this.b_Id = b_Id;
 	}
 
-//	public String getPartList() {
-//		partList = "";
-//		for(Parts curPart:partsList) {
-//			partList += curPart.getName()+", ";
-//		}
-//		partList = partList.substring(0,partList.length()-2);
-//		return partList;
-//	}
+	public String getPartList() {
+		return partList;
+	}
 //
-//	public void setPartList(String partList) {
-//		this.partList = partList;
-//	}
+	public void setPartList(String partList) {
+		this.partList = partList;
+	}
 //
 //	public List<Parts> getPartsList() {
 //		return partsList;
