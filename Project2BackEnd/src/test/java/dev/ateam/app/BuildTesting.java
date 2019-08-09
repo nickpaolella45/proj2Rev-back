@@ -31,30 +31,18 @@ class BuildTesting {
 	@Qualifier("BuildServiceDATA")
 	BuildService bs;
 	
-	Build testBuild = new Build(0,"monkeys,lotsOfMonkeys");
+	
 
 	@Test
-	@Order(1)
-	@Commit
 	void createBuild() {
+	    Build testBuild = new Build(0,"monkeys,lotsOfMonkeys"+Math.random());
 		testBuild = bs.createBuild(testBuild);
-	}
-	
-	@Test
-	@Order(2)
-	@Rollback
-	void updateBuild() {
 		testBuild.setPartList(testBuild.getPartList()+Math.random());
 		bs.updateBuild(testBuild);
-		System.out.println(testBuild);
-	}
-	
-	@Test
-	@Order(3)
-	@Commit
-	void deleteBuild() {
 		bs.deleteBuild(testBuild);
 	}
+	
+
 
 
 }
