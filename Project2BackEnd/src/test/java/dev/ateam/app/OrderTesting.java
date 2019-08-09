@@ -1,10 +1,10 @@
 package dev.ateam.app;
 
+
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
-import org.junit.jupiter.api.condition.EnabledIf;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -14,10 +14,9 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.Assert;
-
 import dev.ateam.entities.Build;
 import dev.ateam.services.BuildService;
+import dev.ateam.services.OrderService;
 
 
 @ExtendWith(SpringExtension.class)
@@ -25,36 +24,36 @@ import dev.ateam.services.BuildService;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @SpringBootTest
 @ContextConfiguration(classes = dev.ateam.app.RevPointRestServiceApplication.class)
-class BuildTesting {
+class OrderTesting {
 
-	@Autowired
-	@Qualifier("BuildServiceDATA")
-	BuildService bs;
-	
-	Build testBuild = new Build(0,"monkeys,lotsOfMonkeys");
-
-	@Test
-	@Order(1)
-	@Commit
-	void createBuild() {
-		testBuild = bs.createBuild(testBuild);
-	}
-	
-	@Test
-	@Order(2)
-	@Rollback
-	void updateBuild() {
-		testBuild.setPartList(testBuild.getPartList()+Math.random());
-		bs.updateBuild(testBuild);
-		System.out.println(testBuild);
-	}
-	
-	@Test
-	@Order(3)
-	@Commit
-	void deleteBuild() {
-		bs.deleteBuild(testBuild);
-	}
+//	@Autowired
+//	@Qualifier("OrderServiceDATA")
+//	OrderService os;
+//	
+//	dev.ateam.entities.Order testOrder = new dev.ateam.entities.Order(0,0,0,0,new Build(0,"duck"),"","");
+//
+//	@Test
+//	@Order(1)
+//	//@Commit
+//	void createOrder() {
+//		testOrder = os.createOrder(testOrder);
+//	}
+//	
+//	@Test
+//	@Order(2)
+//	@Rollback
+//	void updateOrder() {
+//		testOrder.setStatus(testOrder.getStatus()+Math.random());
+//		os.updateOrder(testOrder);
+//		System.out.println(testOrder);
+//	}
+//	
+//	@Test
+//	@Order(3)
+//	@Commit
+//	void deleteOrder() {
+//		os.deleteOrder(testOrder);
+//	}
 
 
 }

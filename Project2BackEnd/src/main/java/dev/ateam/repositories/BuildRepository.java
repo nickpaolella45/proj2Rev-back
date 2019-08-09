@@ -11,6 +11,6 @@ import dev.ateam.entities.Build;
 @Repository
 public interface BuildRepository extends CrudRepository<Build,Integer>{
 
-	List<AppUser> findBypartList(String partList);
+	List<Build> findBypartList(String partList);
 
 }
