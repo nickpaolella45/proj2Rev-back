@@ -1,5 +1,6 @@
 package dev.ateam.entities;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -28,7 +29,7 @@ public class Order {
 	@Column(name="assembler_id")
 	private int aId; //Assembler ID
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(cascade=CascadeType.ALL, fetch = FetchType.EAGER)	
 	@JoinColumn(name ="build_id")
 	//@JoinColumn(name ="build.b_id")
 	private Build build;
