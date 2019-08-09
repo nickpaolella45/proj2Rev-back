@@ -29,7 +29,7 @@ public class Order {
 	private int aId; //Assembler ID
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name ="b_id")
+	@JoinColumn(name ="build_id")
 	//@JoinColumn(name ="build.b_id")
 	private Build build;
 	
