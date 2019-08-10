@@ -51,17 +51,17 @@ public class OrderController {
       return os.deleteOrder(order);
   }
   
-  @RequestMapping(value = "/orders/qm/{id}", method = RequestMethod.GET)
+  @RequestMapping(value = "/orders/quartermaster/{id}", method = RequestMethod.GET)
   public Set<Order> findByqmId(@PathVariable int id) {
 	  return os.findByqmId(id);
   }
 
-  @RequestMapping(value = "/orders/r/{id}", method = RequestMethod.GET)
+  @RequestMapping(value = "/orders/requester/{id}", method = RequestMethod.GET)
   public Set<Order> findByrId(@PathVariable int id) {
 	  return os.findByrId(id);
   }
   
-  @RequestMapping(value = "/orders/a/{id}", method = RequestMethod.GET)
+  @RequestMapping(value = "/orders/assembler/{id}", method = RequestMethod.GET)
   public Set<Order> findByaId(@PathVariable int id) {
 	  return os.findByaId(id);
   }
