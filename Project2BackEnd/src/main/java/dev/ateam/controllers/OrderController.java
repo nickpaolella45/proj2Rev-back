@@ -47,8 +47,8 @@ public class OrderController {
 
   // delete
   @RequestMapping(value = "/orders/{id}", method = RequestMethod.DELETE)
-  public boolean removeOrder(@PathVariable Order order) {
-      return os.deleteOrder(order);
+  public boolean removeOrder(@PathVariable int id) {
+      return os.deleteOrder(id);
   }
   
   @RequestMapping(value = "/orders/quartermaster/{id}", method = RequestMethod.GET)

@@ -30,8 +30,8 @@ public class OrderServiceDATA implements OrderService{
 	
 	
 	@Override
-	public boolean deleteOrder(Order order) {
-		or.delete(order);
+	public boolean deleteOrder(int id) {
+		or.deleteById(id);
 		return true;
 	}
 
