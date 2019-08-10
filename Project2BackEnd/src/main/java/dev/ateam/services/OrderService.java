@@ -11,5 +11,10 @@ public interface OrderService {
 	Order updateOrder(Order order);
 	Set<Order> getAllOrders();
 	Order getOrderById(int id);
+
+	Set<Order> findByqmId(int id);
+	Set<Order> findByrId(int id);
+	Set<Order> findByaId(int id);
+
 	
 }

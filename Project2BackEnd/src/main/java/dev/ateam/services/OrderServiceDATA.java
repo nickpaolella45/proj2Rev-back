@@ -60,6 +60,30 @@ public class OrderServiceDATA implements OrderService{
 		return order;
 	}
 
+
+
+	@Override
+	public Set<Order> findByqmId(int id) {
+		return or.findByqmId(id);
+	}
+
+
+
+	@Override
+	public Set<Order> findByrId(int id) {
+		return or.findByrId(id);
+	}
+
+
+
+	@Override
+	public Set<Order> findByaId(int id) {
+		return or.findByaId(id);
+	}
+
+
+
+
 	
 	
 }
