@@ -23,7 +23,7 @@ import dev.ateam.services.UserService;
 @Transactional
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @SpringBootTest
-@ContextConfiguration(classes = dev.ateam.app.RevPointRestServiceApplication.class)
+@ContextConfiguration(classes = dev.ateam.app.PcppTwo.class)
 class UserTesting {
 
 	@Autowired

@@ -10,10 +10,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EntityScan("dev.ateam.entities")
 @ComponentScan("dev.ateam")
 @EnableJpaRepositories("dev.ateam.repositories")
-public class RevPointRestServiceApplication {
+public class PcppTwo {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RevPointRestServiceApplication.class, args);
+		SpringApplication.run(PcppTwo.class, args);
 	}
 
 }

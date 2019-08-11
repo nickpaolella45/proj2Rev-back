@@ -21,7 +21,7 @@ import dev.ateam.services.OrderService;
 @Transactional
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @SpringBootTest
-@ContextConfiguration(classes = dev.ateam.app.RevPointRestServiceApplication.class)
+@ContextConfiguration(classes = dev.ateam.app.PcppTwo.class)
 class OrderTesting {
 
 	@Autowired
@@ -34,27 +34,14 @@ class OrderTesting {
 	@Order(1)
 	@Rollback
 	//@Commit
-	void createOrder() {
+	void orderCreateUpdateDelete() {
 	  //Order(int orderId, int qmId, int rId, int aId, Build build, String status, String requestDetails)
 	    dev.ateam.entities.Order testOrder = new dev.ateam.entities.Order(0,0,0,0,"duck","100% duck.","it is a duck.");
 		testOrder = os.createOrder(testOrder);
+		testOrder.setStatus(testOrder.getStatus()+Math.random());
+		os.updateOrder(testOrder);
+		os.deleteOrder(testOrder.getOrderId());
 	}
-//	
-//	@Test
-//	@Order(2)
-//	@Rollback
-//	void updateOrder() {
-//		testOrder.setStatus(testOrder.getStatus()+Math.random());
-//		os.updateOrder(testOrder);
-//		System.out.println(testOrder);
-//	}
-//	
-//	@Test
-//	@Order(3)
-//	@Commit
-//	void deleteOrder() {
-//		os.deleteOrder(testOrder);
-//	}
 
 
 }
