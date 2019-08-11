@@ -32,7 +32,7 @@ import dev.ateam.services.UserService;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @AutoConfigureMockMvc
 @SpringBootTest
-@ContextConfiguration(classes = dev.ateam.app.RevPointRestServiceApplication.class) // mouthfull
+@ContextConfiguration(classes = dev.ateam.app.PcppTwo.class) // mouthfull
 class  UserControllerMock {
 
 	@Autowired
@@ -43,9 +43,7 @@ class  UserControllerMock {
 	UserService us;
 
 	@Test
-	void getAllUser() throws Exception{
-		// Design tip, use super fake data just in case it persists to prevent possible
-		// errors
+	void getAllUsers() throws Exception{
 		Set<AppUser> users = new HashSet<AppUser>();
 		users.add(new AppUser(1,"TestUser","Pass","crash test dummy"));
 		users.add(new AppUser(2,"TestUser2","Pass","crash test dummy"));
@@ -53,25 +51,19 @@ class  UserControllerMock {
 		Gson gson = new Gson();
 		String json = gson.toJson(users);
 		System.out.println(json);
-		// requires throws
-		// mockmvc.perform is a fake of a route
-		// data it takes in is a url?
-		ResultActions rs = mockmvc.perform(get("/associates"));
+		ResultActions rs = mockmvc.perform(get("/users"));
 		rs.andExpect(status().isOk());
-		// rs.andExpect(content().json("{{id:0,name:'Fakey McFake',
-		// points:0},{id:1,name:'MilleVanilli',points:-50}}"));
 		rs.andExpect(content().json(json));
 	}
 
 	@Test
-	void addAssociate()  throws Exception{
-		String json = "{id:3,name:'Pastiche', points:0}";
-		// spring framework import
+	void createUser()  throws Exception{
+		String json = "{\"id\": -5, \"username\":\"FakeUserName\",\"password\":\"fakepass\", \"title\":\"king fake\"}";
 		Gson gson = new Gson();
 		AppUser user = gson.fromJson(json, AppUser.class);
 		Mockito.when(us.createUser(user)).thenReturn(user);
-		ResultActions ra = mockmvc.perform(post("/associates").contentType(MediaType.APPLICATION_JSON_VALUE).content(json));
+		ResultActions ra = mockmvc.perform(post("/users").contentType(MediaType.APPLICATION_JSON_VALUE).content(json));
 		ra.andExpect(status().isOk());
 	}
-
+	
 }

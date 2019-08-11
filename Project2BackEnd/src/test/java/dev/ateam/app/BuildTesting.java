@@ -24,7 +24,7 @@ import dev.ateam.services.BuildService;
 @Transactional
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @SpringBootTest
-@ContextConfiguration(classes = dev.ateam.app.RevPointRestServiceApplication.class)
+@ContextConfiguration(classes = dev.ateam.app.PcppTwo.class)
 class BuildTesting {
 
 	@Autowired
